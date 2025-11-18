@@ -42,10 +42,6 @@
             left: 0;
             width: 100%;
         }
-	main{
-	text-align:center;
-	justify-content:center;
-	}
         a{
             text-decoration: none;
             color:purple;
@@ -88,16 +84,10 @@
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
     <main>
-        <h2><b>Ejercicio 09</b></h2>
+        <h2><b>Muestra del código PHP Ejercicio 21</b></h2>
         
         <?php
-        /*
-         * Autor: Alberto Méndez Núñez
-         * Fecha de ultima modificación: 10/10/2025
-         * 
-         */
-        
-        echo 'La ruta donde se encuentra el archivo con la variable global $_SERVER: '.'<span style="color:red;">'.$_SERVER['SCRIPT_FILENAME'].'</span>'."<br>";
+        highlight_file("../codigoPHP/ejercicio21.php");
         ?>
         
     </main>

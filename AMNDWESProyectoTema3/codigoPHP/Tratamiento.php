@@ -88,18 +88,23 @@
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
     <main>
-        <h2><b>Ejercicio 09</b></h2>
-        
-        <?php
-        /*
-         * Autor: Alberto Méndez Núñez
-         * Fecha de ultima modificación: 10/10/2025
-         * 
-         */
-        
-        echo 'La ruta donde se encuentra el archivo con la variable global $_SERVER: '.'<span style="color:red;">'.$_SERVER['SCRIPT_FILENAME'].'</span>'."<br>";
-        ?>
-        
+        <h2><b>DATOS FORMULARIO</b></h2>
+            <?php
+                    /*
+                     * Autor: Alberto Méndez Núñez
+                     * Fecha de ultima modificación: 17/10/2025
+                     *21. Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
+                            las preguntas y las respuestas recogidas.
+                     */
+
+                            $nombre=$_REQUEST['nombre' ?? ''];
+                            $edad=$_REQUEST['edad' ?? ''];
+                            
+                                echo $nombre."<br>";
+                                echo $edad."<br>";
+                        
+
+                    ?>
     </main>
 </body>
 </html>

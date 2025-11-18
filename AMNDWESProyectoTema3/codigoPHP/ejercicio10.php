@@ -88,7 +88,7 @@
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
     <main>
-        <h2><b>Ejercicio 09</b></h2>
+        <h2><b>Ejercicio 10</b></h2>
         
         <?php
         /*
@@ -97,7 +97,7 @@
          * 
          */
         
-        echo 'La ruta donde se encuentra el archivo con la variable global $_SERVER: '.'<span style="color:red;">'.$_SERVER['SCRIPT_FILENAME'].'</span>'."<br>";
+        echo "Contenido del archivo: ".file_get_contents(__FILE__);
         ?>
         
     </main>
