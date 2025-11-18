@@ -167,6 +167,100 @@
                 <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio09.php">Ejecutar</a></td>
                 <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio09.php">Ver código</a></td>
             </tr>
+            
+            <tr>
+                <td>Ejercicio10</td>
+                <td>10. Mostrar el contenido del fichero que se está ejecutando.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio10.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio10.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio12</td>
+                <td>12. Mostrar el contenido de las variables superglobales (utilizando print_r() y foreach())</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio12.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio12.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio14</td>
+                <td>14. Comprobar las librerías que estás utilizando en tu entorno de desarrollo y explotación. Crear tu propia librería de funciones y estudiar la forma de usarla en el entorno de desarrollo y en el de explotación.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio14.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio14.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio15</td>
+                <td>15. Crear e inicializar un array con el sueldo percibido de lunes a domingo. Recorrer el array para calcular el sueldo percibido durante la semana. (Array asociativo con los nombres de los días de la semana).</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio15.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio15.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio16</td>
+                <td>16. Recorrer el array anterior utilizando funciones para obtener el mismo resultado.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio16.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio16.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio17</td>
+                <td>17. Inicializar un array (bidimensional con dos índices numéricos) donde almacenamos el nombre de las personas que tienen reservado el
+                    asiento en un teatro de 20 filas y 15 asientos por fila. (Inicializamos el array ocupando únicamente 5 asientos). Recorrer el array con
+                    distintas técnicas (foreach(), while(), for()) para mostrar los asientos ocupados en cada fila y las personas que lo ocupan.
+                </td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio17.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio17.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio18</td>
+                <td>18. Recorrer el array anterior utilizando funciones para obtener el mismo resultado.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio18.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio18.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio20</td>
+                <td>20. Convertir la LibreriaValidacionFormularios.php en una clase ValidacionFormularios.php. El profesor facilitará a los alumnos la clase
+                    AAMMDDValidacionFormularios.php desarrollada en el curso anterior como punto de partida.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio20.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio20.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio21</td>
+                <td>21. Construir un formulario para recoger un cuestionario realizado a una persona y enviarlo a una página Tratamiento.php para que muestre
+                    las preguntas y las respuestas recogidas.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio21.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio21.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio22</td>
+                <td>22. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+                    recogidas.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio22.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio22.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio23</td>
+                <td>23. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+                    recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente.</td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio23.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio23.php">Ver código</a></td>
+            </tr>
+            
+            <tr>
+                <td>Ejercicio24</td>
+                <td>24. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+                    recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
+                    respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.
+                </td>
+                <td class="codigos"><a href="/AMNDWESProyectoTema3/codigoPHP/ejercicio24.php">Ejecutar</a></td>
+                <td class="mostrar"><a href="/AMNDWESProyectoTema3/mostrarcodigo/muestraEjercicio24.php">Ver código</a></td>
+            </tr>
         </table>
     </main>
 </body>

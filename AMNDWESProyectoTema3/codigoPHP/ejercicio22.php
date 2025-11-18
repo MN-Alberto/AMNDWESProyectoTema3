@@ -88,17 +88,44 @@
         <p>Curso 2025/2026 - Grupo DAW2</p>
     </header>
     <main>
-        <h2><b>Ejercicio 09</b></h2>
+        <h2><b>Ejercicio 22</b></h2>
         
-        <?php
-        /*
-         * Autor: Alberto Méndez Núñez
-         * Fecha de ultima modificación: 10/10/2025
-         * 
-         */
-        
-        echo 'La ruta donde se encuentra el archivo con la variable global $_SERVER: '.'<span style="color:red;">'.$_SERVER['SCRIPT_FILENAME'].'</span>'."<br>";
-        ?>
+        <form method="post" action="">
+            <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre" id="nombre"/>
+            <br>
+            <br>
+            <label for="edad">Edad:</label>
+            <input type="number" name="edad" id="edad"/>
+            <br>
+            <br>
+            <label for="fecha">Fecha:</label>
+            <input type="date" name="fecha" id="fecha"/>
+            <br>
+            <br>
+            <input type="submit" name="submit" value="Enviar">
+        </form>
+       
+                            <?php
+                    /*
+                     * Autor: Alberto Méndez Núñez
+                     * Fecha de ultima modificación: 17/10/2025
+                     *22. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+                        recogidas.
+                     */
+                     
+                     if(isset($_REQUEST['submit'])){
+                        $nombre = $_REQUEST['nombre'] ?? '';
+                        $edad = $_REQUEST['edad'] ?? '';
+                        $fecha = $_REQUEST['fecha'] ?? '';
+                            
+                            echo "<br><br>";
+                            echo "<h3>Datos introducidos:</h3>";
+                                echo $nombre."<br>";
+                                echo $edad."<br>";
+                                echo $fecha."<br>";
+                     }
+                    ?>
         
     </main>
 </body>
