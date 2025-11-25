@@ -97,9 +97,18 @@
          * 
          */
         
+        // Establece la zona horaria a utilizar para funciones de fecha y hora.
+        // "Europe/Madrid" indica que se usará la hora oficial de España.
+        
         date_default_timezone_set("Europe/Madrid");
+        
+        // Crea un nuevo objeto DateTime con la fecha y hora actuales del sistema.
+        // El objeto $fechaYhora permite manipular y formatear fechas de forma sencilla.
         $fechaYhora=new DateTime();
         
+        // Imprime un mensaje concatenado con la fecha y hora actual formateada.
+        // ->format("d-m-Y h:i:s") convierte el objeto DateTime en un string con el formato:
+        // día-mes-año horas:minutos:segundos (en formato 12h porque se usa "h" en lugar de "H").
         echo "La fecha y hora actual es: ".$fechaYhora->format("d-m-Y h:i:s");    
         
         ?>

@@ -90,7 +90,7 @@
     <main>
         <h2><b>Ejercicio 21</b></h2>
         
-        
+        <!-- Formulario HTML que envía datos al archivo Tratamiento.php mediante el método POST -->
         <form method="post" action="Tratamiento.php">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre"/>

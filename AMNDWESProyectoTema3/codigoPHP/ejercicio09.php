@@ -97,6 +97,10 @@
          * 
          */
         
+        // $_SERVER['SCRIPT_FILENAME'] es una variable superglobal que devuelve la ruta absoluta
+        // del archivo en el servidor.
+        // Se utiliza un <span> con estilo de color rojo para resaltar la ruta en la página web.
+        // "<br>" añade un salto de línea después del mensaje.
         echo 'La ruta donde se encuentra el archivo con la variable global $_SERVER: '.'<span style="color:red;">'.$_SERVER['SCRIPT_FILENAME'].'</span>'."<br>";
         ?>
         

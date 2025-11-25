@@ -97,9 +97,9 @@
          * 
          */
         
-        
-            $string="Ejemplo string";
-            $int=12;
+            // definimos las variables con '$nombreVariable=valorVariable'.
+            $string="Ejemplo string"; // entre comillas strings.
+            $int=12;    // sin comillas los int float y boolean.
             $float=12.45;
             $boolean=true;
             

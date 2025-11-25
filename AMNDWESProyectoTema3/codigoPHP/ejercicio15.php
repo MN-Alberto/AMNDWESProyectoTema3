@@ -98,26 +98,35 @@
            semana. (Array asociativo con los nombres de los días de la semana).
          */
 
-        $aSueldos=array(
-          "lunes" =>  50,
-          "martes" =>  40,
-          "miercoles" =>  60,
-          "jueves" =>  70,
-          "viernes" =>  20,
-          "sabado" =>  90,
-          "domingo" =>  150,
+        // Se crea un array asociativo llamado $aSueldos.
+        // Las claves son los días de la semana y los valores son los sueldos percibidos en cada día.
+        $aSueldos = array(
+            "lunes" => 50,
+            "martes" => 40,
+            "miercoles" => 60,
+            "jueves" => 70,
+            "viernes" => 20,
+            "sabado" => 90,
+            "domingo" => 150,
         );
-        
-        
-        $total=0;
-        
-        foreach ($aSueldos as $dia => $sueldo){
-            echo "El ".$dia." ha ganado: ".$sueldo."€<br>";
-            $total+=$sueldo;
+
+        // Variable para almacenar el total acumulado del sueldo semanal.
+        $total = 0;
+
+        // Bucle foreach para recorrer el array asociativo.
+        // $dia contendrá la clave (nombre del día) y $sueldo el valor correspondiente.
+        foreach ($aSueldos as $dia => $sueldo) {
+            // Muestra el sueldo ganado en cada día.
+            echo "El " . $dia . " ha ganado: " . $sueldo . "€<br>";
+
+            // Suma el sueldo de cada día al total acumulado.
+            $total += $sueldo;
         }
-        
-        echo "<br>El total del sueldo semanal es: <span style='color:red;'>".$total."€";
-        
+
+        // Muestra el total del sueldo semanal.
+        // Se usa un <span> con estilo en rojo para resaltar el total.
+        echo "<br>El total del sueldo semanal es: <span style='color:red;'>" . $total . "€";
+
         ?>
         
     </main>

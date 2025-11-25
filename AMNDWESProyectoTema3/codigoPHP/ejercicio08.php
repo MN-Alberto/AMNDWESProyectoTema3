@@ -97,6 +97,9 @@
          * 
          */
         
+        // $_SERVER['REMOTE_ADDR'] es una variable superglobal que contiene la IP del usuario que hace la petición.
+        // Se usa un <span> con color rojo para resaltar la IP en la página web.
+        // "<br>" añade un salto de línea después del mensaje.
         echo 'La dirección IP con la variable global $_SERVER: '.'<span style="color:red;">'.$_SERVER['REMOTE_ADDR'].'</span>'."<br>";
         ?>
         

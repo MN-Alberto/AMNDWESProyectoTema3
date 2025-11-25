@@ -97,12 +97,14 @@
          * 
          */
            
-$heredoc = <<<EOD
-<pre>Ejemplo de variable heredoc
-para almacenar texto
-en líneas diferentes.</pre>
-EOD;
+            // para definir una variable que va a almacenar un mensaje de mas de una linea utilizamos '<<<EOD <pre>mensaje</pre> EOD'.
+            $heredoc = <<<EOD
+            <pre>Ejemplo de variable heredoc
+            para almacenar texto
+            en líneas diferentes.</pre>
+            EOD;
         
+            // mostramos la variable por pantalla, se concatena con el '.'.
             echo 'Salida por pantalla de variable heredoc: <br>'.$heredoc ;
 
         ?>
