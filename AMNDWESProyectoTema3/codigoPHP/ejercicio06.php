@@ -97,14 +97,24 @@
          * 
          */
         
+        // Establece la zona horaria que utilizarán las funciones de fecha y hora.
+        // En este caso, la zona horario corresponde a Madrid (España).
         date_default_timezone_set("Europe/Madrid");
         
+        // Crea un nuevo objeto DateTime que contiene la fecha y hora actuales
+        // según la zona horaria establecida previamente.
         $fecha=new DateTime();
         
+        // Muestra la fecha actual formateada como día-mes-año.
+        // El "<br>" añade un salto de línea en la página.
         echo "La fecha actual es: ".$fecha->format('d-m-Y')."<br>";
         
+        // Añade un intervalo de tiempo al objeto DateTime.
+        // 'P60D' significa: Periodo (P) de 60 Días (D).
+        // Es decir, se suman 60 días a la fecha actual.
         $fecha->add(new DateInterval('P60D'));
         
+        // Muestra la nueva fecha resultante tras añadir los 60 días.
         echo "La fecha actual más 60 días es: ".$fecha->format('d-m-Y');
         
         ?>

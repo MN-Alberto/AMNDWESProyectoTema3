@@ -118,109 +118,118 @@
     <main>
         <h2><b>Ejercicio 24</b></h2>
         <div id="formulario">
-       <h3>Formulario de datos personales:</h3>
+       <h3>Formulario de datos del departamento:</h3>
        
-                            <?php
-                    /*
-                     * Autor: Alberto Méndez Núñez
-                     * Fecha de ultima modificación: 24/10/2025
-                     *24. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
-                            recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
-                            respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.
-                     */
+                    <?php
+            /*
+             * Autor: Alberto Méndez Núñez
+             * Fecha de ultima modificación: 21/11/2025
+             *24. Construir un formulario para recoger un cuestionario realizado a una persona y mostrar en la misma página las preguntas y las respuestas
+                    recogidas; en el caso de que alguna respuesta esté vacía o errónea volverá a salir el formulario con el mensaje correspondiente, pero las
+                    respuestas que habíamos tecleado correctamente aparecerán en el formulario y no tendremos que volver a teclearlas.
+             */
                             
 
-                            // array que va a almacenar los errores al introducir valores en los campos.
-                            $aErrores=[
-                                "nombre" => "",
-                                "edad" => ""
-                            ];
-                            
-                            $entradaOK=true; // variable booleana para comprobar si la entrada de los campos es la correcta.
-                            
-                            // array que va a almacenar las respuestas correctas de los campos para mostrarlas por pantalla.
-                            $aRespuesta=[
-                              "nombre" => "",
-                              "edad" => ""
-                            ];
-                            
+            require_once '../core/231018libreriaValidacion.php';
+
+            $aErrores = [
+                "T02_CodDepartamento" => "",
+                "T02_DescDepartamento" => "",
+                "T02_VolumenNegocio" => ""
+            ];
+
+            $aRespuestas = [
+                "T02_CodDepartamento" => "",
+                "T02_DescDepartamento" => "",
+                "T02_VolumenNegocio" => ""
+            ];
+
+            $entradaOK = true;
+
+            if (isset($_REQUEST['submit'])) {
+
+                $T02_CodDepartamento=$_REQUEST['T02_CodDepartamento'] ?? "";
+                $T02_DescDepartamento=$_REQUEST['T02_DescDepartamento'] ?? "";
+                $T02_VolumenNegocio=$_REQUEST['T02_VolumenNegocio'] ?? "";
+
+                $aErrores['T02_CodDepartamento']=validacionFormularios::comprobarAlfabetico($T02_CodDepartamento, 3, 3, 1);
                 
-                // comprobación de si el usuario ha pulsado el botón de enviar.  
-               if(isset($_REQUEST['submit'])){
-                   
-                  // inicialización de las variables $nombre y $edad con la información introducida en el formulario.
-                      $nombre= $_REQUEST['nombre'] ?? '';
-                      $edad= $_REQUEST['edad'] ?? '';
-                   
-                // comprobación de que la variable $nombre tiene un valor valido (no está vacio y no es un número).
-                if(trim($nombre)==='' || is_numeric($nombre)){
-                    // si no tiene valor o es incorrecto añadimos un mensaje de error a $aErrores y cambiamos $entradaOK a false.
-                    $aErrores["nombre"]="El campo nombre no puede estar vacio ni ser un número.";
-                    $entradaOK=false;
+                if($T02_CodDepartamento!== strtoupper($T02_CodDepartamento)){
+                    $aErrores['T02_CodDepartamento']='El codigo de departamento debe estar en mayusculas';
                 }
                 
-                // comprobación de que la variable $edad tiene un valor numerico mayor que 0 y menor que 100.
-                if($edad==='' || !is_numeric($edad) || $edad<0 || $edad>100){
-                    // si no añadimos un mensaje de error a $aErrores y cambiamos $entradaOK a false.
-                    $aErrores["edad"]="El campo edad no puede estar vacio, y debe ser un número entre 0 y 100.";
-                    $entradaOK=false;
+                $aErrores['T02_DescDepartamento']=validacionFormularios::comprobarAlfabetico($T02_DescDepartamento, 255, 1, 1);
+                
+                $volumen = str_replace(",", ".", $T02_VolumenNegocio);
+                $aErrores['T02_VolumenNegocio']=validacionFormularios::comprobarFloat($volumen, PHP_FLOAT_MAX, 0, 1);
+
+                foreach ($aErrores as $error) {
+                    if (!empty($error)) {
+                        $entradaOK = false;
+                    }
                 }
-               }
-               else{
-                   // el formulario no se ha rellenado nunca
-                   $entradaOK=false;
-               }
-                         
-                
-                if($entradaOK){
-                    // Si el formato de entrada de los datos es correcto añadimos las respuestas a un array para devolverlas.
-                    $aRespuesta["nombre"]=$nombre;
-                    $aRespuesta["edad"]=$edad;
-                    
-                    //Mostramos el array con cada respuesta por pantalla.
-                            echo "<h3>Datos introducidos:</h3>";
-                                echo $aRespuesta["nombre"]."<br>";
-                                echo $aRespuesta["edad"]."<br>";
-                                echo "<br>";
-                }                  
-            
-                //Si la entrada no es la correcta vuelve a mostrar el formulario de nuevo.
-            else{
-                
-                ?>
-            <form action=<?php echo $_SERVER["PHP_SELF"];?> method="post">
-                <table>
-                    <tr>
-                        <td><label for="nombre">Nombre:</label></td>
-                <td><input type="text" name="nombre" id="nombre" style="background-color: lightgoldenrodyellow" 
-                           value="<?php echo (empty($aErrores['nombre'])) ? ($_REQUEST['nombre'] ?? '') : ''; ?>"/></td>
-                <!-- 
-                   si da error lo mostamos al lado de su campo.
-                -->
-                <td><span style="color:red;"><?= $aErrores["nombre"] ?></span></td>
-                </tr>
-                <tr>
-                    <td><label for="edad">Edad:</label></td>
-                    <td><input type="number" name="edad" id="edad" style="background-color: lightgoldenrodyellow"
-                               value="<?php echo (empty($aErrores['edad'])) ? ($_REQUEST['edad'] ?? '') : ''; ?>"/></td>
-                <!--
-                   si da error lo mostamos al lado de su campo.
-                -->
-                <td><span style="color:red;"><?= $aErrores["edad"] ?></span></td>
-                </tr>
-                
-                <tr>
-                    <td colspan="3"><input id="boton" type="submit" name="submit" value="Enviar"><td>
-                </tr>
-                </table>
-            </form>
-       </div>
-        
-        <?php
-        
-            //Cerramos el else.
             }
-                    ?>
+
+            if ($entradaOK && isset($_REQUEST['submit'])) {
+
+                $aRespuestas['T02_CodDepartamento']  = $T02_CodDepartamento;
+                $aRespuestas['T02_DescDepartamento'] = $T02_DescDepartamento;
+                $aRespuestas['T02_VolumenNegocio']   = $T02_VolumenNegocio;
+
+                echo "<h3>Datos introducidos:</h3>";
+                echo "Código: " . $aRespuestas["T02_CodDepartamento"] . "<br>";
+                echo "Descripción: " . $aRespuestas["T02_DescDepartamento"] . "<br>";
+                echo "Volumen de negocio: " . $aRespuestas["T02_VolumenNegocio"] . "€" . "<br>";
+
+            } else {
+                ?>
+                    <form action="<?= $_SERVER['PHP_SELF'] ?>" method="post">
+                        <table>
+
+                            <tr>
+                                <td><label for="T02_CodDepartamento">Código de departamento:</label></td>
+                                <td><input type="text" name="T02_CodDepartamento" id="T02_CodDepartamento"
+                                           style="background-color: lightgoldenrodyellow"
+                                           value="<?= (empty($aErrores['T02_CodDepartamento'])) ?
+                                               ($_REQUEST['T02_CodDepartamento'] ?? '') : '' ?>"></td>
+
+                                <td><span style="color:red;"><?= $aErrores["T02_CodDepartamento"] ?></span></td>
+                            </tr>
+
+
+                            <tr>
+                                <td><label for="T02_DescDepartamento">Descripción del departamento:</label></td>
+                                <td><input type="text" name="T02_DescDepartamento" id="T02_DescDepartamento"
+                                           style="background-color: lightgoldenrodyellow"
+                                           value="<?= (empty($aErrores['T02_DescDepartamento'])) ?
+                                               ($_REQUEST['T02_DescDepartamento'] ?? '') : '' ?>"></td>
+
+                                <td><span style="color:red;"><?= $aErrores["T02_DescDepartamento"] ?></span></td>
+                            </tr>
+
+
+                            <tr>
+                                <td><label for="T02_VolumenNegocio">Volumen de Negocio:</label></td>
+                                <td><input type="number" name="T02_VolumenNegocio" id="T02_VolumenNegocio"
+                                           style="background-color: lightgoldenrodyellow"
+                                           value="<?= (empty($aErrores['T02_VolumenNegocio'])) ?
+                                                ($_REQUEST['T02_VolumenNegocio'] ?? '') : '' ?>" step="0.1"></td>
+
+                                <td><span style="color:red;"><?= $aErrores["T02_VolumenNegocio"] ?></span></td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="3" style="text-align:center;">
+                                    <input id="boton" type="submit" name="submit" value="Enviar">
+                                </td>
+                            </tr>
+
+                        </table>
+                    </form>
+
+            <?php
+            }
+            ?>
         
     </main>
 </body>

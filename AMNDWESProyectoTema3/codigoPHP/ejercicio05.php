@@ -96,11 +96,17 @@
          * Fecha de ultima modificación: 10/10/2025
          * 
          */
-        
+        // Establece la zona horaria a utilizar para las funciones relacionadas con fecha y hora.
+        // En este caso se configura la zona horaria de Madrid (España).
         date_default_timezone_set("Europe/Madrid");
 
+        // Crea un nuevo objeto DateTime que contiene la fecha y hora actuales,
+        // tomando como referencia la zona horaria previamente definida.
         $timestamp=new DateTime();
         
+        // Imprime un mensaje seguido del valor del timestamp actual.
+        // getTimestamp() devuelve el tiempo UNIX: el número de segundos transcurridos
+        // desde el 1 de enero de 1970 a las 00:00:00 UTC.
         echo "Fecha actual con 'timestamp': ".$timestamp->getTimestamp();
         
         ?>

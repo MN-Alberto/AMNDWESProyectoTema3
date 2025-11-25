@@ -97,8 +97,18 @@
          * 
          */
         
+        // utilizando la variable superglobal $_SERVER.
+        // $_SERVER['SCRIPT_NAME'] devuelve la ruta del archivo PHP que se está ejecutando
+        // relativa al directorio raíz del servidor web.
+        // Se envuelve el valor en un <span> para mostrarlo en rojo.
+        // "<br>" añade un salto de línea después.
         echo 'El nombre del fichero que se está ejecutando con la variable global $_SERVER: '.'<span style="color:red;">'.$_SERVER['SCRIPT_NAME'].'</span>'."<br>";
         
+        // Imprime otro mensaje mostrando el nombre del mismo fichero,
+        // pero esta vez obtenido con la función basename().
+        // basename(__FILE__) devuelve solo el nombre del archivo actual,
+        // sin incluir la ruta completa.
+        // Igual que antes, el nombre se muestra en rojo usando <span>.
         echo "El nombre del fichero que se está ejecutando con 'basename' es: ".'<span style="color:red;">'.basename(__FILE__).'</span>';
         ?>
         

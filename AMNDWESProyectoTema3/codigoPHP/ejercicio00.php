@@ -96,7 +96,11 @@
          * Fecha de ultima modificación: 09/10/2025
          * 
          */
+        
+        // utilizamos 'echo' para mostrar mensajes o valores de variables por pantalla.
             echo "Hola Mundo!";
+            
+        // Con 'phpinfo()' mostramos las características de php.
             phpinfo();
         ?>
         

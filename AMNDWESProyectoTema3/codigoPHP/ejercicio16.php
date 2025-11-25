@@ -98,29 +98,42 @@
          */
 
         
-        function recorrerSueldoSemanal(){
-                  $aSueldos=array(
-                  "lunes" =>  50,
-                  "martes" =>  40,
-                  "miercoles" =>  60,
-                  "jueves" =>  70,
-                  "viernes" =>  20,
-                  "sabado" =>  90,
-                  "domingo" =>  150,
-                );
+        // Se define una función llamada recorrerSueldoSemanal
+        // que calcula y muestra el sueldo diario y el total semanal.
+        function recorrerSueldoSemanal() {
+            // Se crea un array asociativo $aSueldos con los días de la semana como claves
+            // y el sueldo correspondiente a cada día como valor.
+            $aSueldos = array(
+                "lunes" => 50,
+                "martes" => 40,
+                "miercoles" => 60,
+                "jueves" => 70,
+                "viernes" => 20,
+                "sabado" => 90,
+                "domingo" => 150,
+            );
 
+            // Variable para acumular el total del sueldo semanal.
+            $total = 0;
 
-                $total=0;
-            
-                foreach ($aSueldos as $dia => $sueldo){
-                   echo "El ".$dia." ha ganado: ".$sueldo."€<br>";
-                   $total+=$sueldo;
-               }
-               
-               return "<br>El total del sueldo semanal es: <span style='color:red;'>".$total."€";   
+            // Recorre cada elemento del array asociativo.
+            // $dia contendrá la clave (nombre del día) y $sueldo el valor (cantidad ganada).
+            foreach ($aSueldos as $dia => $sueldo) {
+                // Muestra cuánto se ha ganado cada día.
+                echo "El " . $dia . " ha ganado: " . $sueldo . "€<br>";
+                // Suma el sueldo del día al total acumulado.
+                $total += $sueldo;
+            }
+
+            // Devuelve como resultado un string con el total del sueldo semanal.
+            // Se utiliza <span> con color rojo para resaltar el total.
+            return "<br>El total del sueldo semanal es: <span style='color:red;'>" . $total . "€";   
         }
-        
-        $mensaje=recorrerSueldoSemanal();
+
+        // Se llama a la función y se guarda el resultado (el total del sueldo) en la variable $mensaje.
+        $mensaje = recorrerSueldoSemanal();
+
+        // Se muestra el mensaje que contiene el total del sueldo semanal.
         echo $mensaje;
         ?>
         

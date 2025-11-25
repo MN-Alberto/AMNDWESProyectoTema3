@@ -97,9 +97,18 @@
          * 
          */
         
+        
+        // Establece la zona horaria que se va a usar para las funciones de fecha y hora.
+        // En este caso, se usa la zona horaria de Portugal: "Europe/Lisbon".
         date_default_timezone_set("Europe/Lisbon");
+        
+        // Crea un nuevo objeto DateTime que representa la fecha y hora actuales
+        // tomando como referencia la zona horaria previamente configurada.
         $fechaYhora=new DateTime();
         
+        // Muestra un mensaje concatenado con la fecha y hora actual formateada.
+        // El método ->format("d-m-Y h:i:s") devuelve la fecha en formato:
+        // día-mes-año y hora:minuto:segundo (con formato de 12 horas por usar "h").
         echo "La fecha y hora actual en Portugal es: ".$fechaYhora->format("d-m-Y h:i:s");    
         
         ?>

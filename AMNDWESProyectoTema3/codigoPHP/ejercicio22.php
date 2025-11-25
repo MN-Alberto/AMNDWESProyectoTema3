@@ -89,7 +89,7 @@
     </header>
     <main>
         <h2><b>Ejercicio 22</b></h2>
-        
+        <!-- Formulario HTML para recoger un cuestionario de una persona -->
         <form method="post" action="">
             <label for="nombre">Nombre:</label>
             <input type="text" name="nombre" id="nombre"/>
@@ -103,6 +103,7 @@
             <input type="date" name="fecha" id="fecha"/>
             <br>
             <br>
+            <!-- Botón de envío del formulario -->
             <input type="submit" name="submit" value="Enviar">
         </form>
        
@@ -114,17 +115,25 @@
                         recogidas.
                      */
                      
-                     if(isset($_REQUEST['submit'])){
+                     // Comprueba si se ha enviado el formulario.
+                    // isset($_REQUEST['submit']) verifica si el botón de submit fue pulsado.
+                    if (isset($_REQUEST['submit'])) {
+
+                        // Recoge los valores introducidos en el formulario usando $_REQUEST.
+                        // El operador ?? '' asegura que, si no existe el valor, se use una cadena vacía.
                         $nombre = $_REQUEST['nombre'] ?? '';
                         $edad = $_REQUEST['edad'] ?? '';
                         $fecha = $_REQUEST['fecha'] ?? '';
-                            
-                            echo "<br><br>";
-                            echo "<h3>Datos introducidos:</h3>";
-                                echo $nombre."<br>";
-                                echo $edad."<br>";
-                                echo $fecha."<br>";
-                     }
+
+                        // Muestra un título para los datos introducidos.
+                        echo "<br><br>";
+                        echo "<h3>Datos introducidos:</h3>";
+
+                        // Muestra cada valor recogido en el formulario.
+                        echo $nombre . "<br>";
+                        echo $edad . "<br>";
+                        echo $fecha . "<br>";
+                    }
                     ?>
         
     </main>

@@ -97,6 +97,10 @@
          * 
          */
         
+        // Imprime un mensaje seguido del contenido completo del propio archivo PHP.
+        // __FILE__ es una constante mágica que representa la ruta completa del archivo actual.
+        // file_get_contents(__FILE__) lee todo el contenido del archivo y lo devuelve como cadena de texto.
+        // Esto permite mostrar literalmente el código fuente del script en la página web.
         echo "Contenido del archivo: ".file_get_contents(__FILE__);
         ?>
         
